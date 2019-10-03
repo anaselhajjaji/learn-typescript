@@ -41,3 +41,13 @@ promise2.then((res) => {
 promise2.catch((err) => {
     console.log('I get called:', err.message); // I get called: 'Something awful happened'
 });
+
+console.log("//--------------------------//");
+console.log("//                          //");
+console.log("//         JSON             //");
+console.log("//                          //");
+console.log("//--------------------------//");
+const jsonStr = JSON.stringify({ name: "bob", age: 34, created: new Date() });
+console.log(jsonStr);
+const jsonObj = JSON.parse(jsonStr);
+console.log(jsonObj);
