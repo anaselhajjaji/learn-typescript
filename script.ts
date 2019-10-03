@@ -51,3 +51,31 @@ const jsonStr = JSON.stringify({ name: "bob", age: 34, created: new Date() });
 console.log(jsonStr);
 const jsonObj = JSON.parse(jsonStr);
 console.log(jsonObj);
+
+console.log("//--------------------------//");
+console.log("//                          //");
+console.log("//         Async/Await      //");
+console.log("//                          //");
+console.log("//--------------------------//");
+function delay(milliseconds: number, count: number): Promise<number> {
+    return new Promise<number>(resolve => {
+            setTimeout(() => {
+                resolve(count);
+            }, milliseconds);
+        });
+}
+
+// async function always returns a Promise
+async function dramaticWelcome(): Promise<void> {
+    console.log("Hello");
+
+    for (let i = 0; i < 5; i++) {
+        // await is converting Promise<number> into number
+        const count:number = await delay(500, i);
+        console.log(count);
+    }
+
+    console.log("World!");
+}
+
+dramaticWelcome();
